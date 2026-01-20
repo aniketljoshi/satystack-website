@@ -1,0 +1,85 @@
+.section {
+    padding: 6rem 1.5rem;
+    background: var(--surface-alt);
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+.tableWrapper {
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    /* Soft shadow for table */
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.th {
+    background: #f8fafc;
+    /* Slate 50 */
+    padding: 1.5rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--surface-border);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.td {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--surface-border);
+    color: var(--text-primary);
+}
+
+.tr:last-child .td {
+    border-bottom: none;
+}
+
+.check {
+    color: var(--primary);
+    /* Blue checkmarks */
+    font-weight: 600;
+}
+
+.cross {
+    color: #dc2626;
+    /* Red 600 */
+    font-weight: 600;
+}
+
+.highlight {
+    background: #f1f9fe;
+    /* Very subtle blue background for SatyaStack column */
+    font-weight: 600;
+}
+
+.th.highlight {
+    color: var(--primary);
+    background: #e0f2fe;
+    /* Slightly darker header for highlight column */
+}
+
+@media (max-width: 768px) {
+    .tableWrapper {
+        overflow-x: auto;
+    }
+}

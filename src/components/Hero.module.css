@@ -1,0 +1,164 @@
+.hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 8rem 1.5rem 4rem;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.03) 0%, transparent 70%);
+}
+
+/* Subtle grid pattern for professional look */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        linear-gradient(var(--surface-border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--surface-border) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(circle at 50% 50%, black 30%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    border-radius: 999px;
+    font-size: 0.875rem;
+    color: var(--primary);
+    margin-bottom: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    animation: fadeDown 0.8s ease-out;
+}
+
+.headline {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
+    animation: fadeUp 0.8s ease-out 0.2s backwards;
+}
+
+/* Specific override for the gradient span within headline */
+.headline span {
+    background: linear-gradient(to right, #2563eb, #0f172a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.subheadline {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    line-height: 1.6;
+    animation: fadeUp 0.8s ease-out 0.4s backwards;
+}
+
+.actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    animation: fadeUp 0.8s ease-out 0.6s backwards;
+}
+
+.ctaPrimary {
+    background: var(--primary);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.ctaPrimary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+}
+
+.ctaSecondary {
+    background: white;
+    border: 1px solid var(--surface-border);
+    color: var(--text-primary);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    font-size: 1.1rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.ctaSecondary:hover {
+    background: var(--surface-hover);
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .headline {
+        font-size: 2.5rem;
+    }
+
+    .actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .ctaPrimary,
+    .ctaSecondary {
+        width: 100%;
+    }
+}

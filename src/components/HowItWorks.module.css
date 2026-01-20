@@ -1,0 +1,112 @@
+.section {
+    padding: 6rem 1.5rem;
+    background: var(--surface-alt);
+    /* Light gray background */
+    border-top: 1px solid var(--surface-border);
+    border-bottom: 1px solid var(--surface-border);
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.heading {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 5rem;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+.flow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 5rem;
+    position: relative;
+}
+
+/* Connecting line */
+.flow::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: #cbd5e1;
+    /* Slate 300 */
+    z-index: 0;
+}
+
+.step {
+    flex: 1;
+    min-width: 200px;
+    background: var(--surface);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--surface-border);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.stepNumber {
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 0 4px white;
+    /* Outline to separate from connecting line */
+}
+
+.stepTitle {
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    font-size: 1.125rem;
+    color: var(--text-primary);
+}
+
+.stepDesc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.actors {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-top: 2rem;
+    border-top: 1px dashed #cbd5e1;
+    padding-top: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+    .flow {
+        flex-direction: column;
+    }
+
+    .flow::before {
+        display: none;
+    }
+
+    .step {
+        width: 100%;
+    }
+}
