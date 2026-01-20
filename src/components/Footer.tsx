@@ -50,19 +50,20 @@ export default function Footer() {
                         <div>
                             <h4 className="font-bold text-white mb-6">Platform</h4>
                             <ul className="space-y-4 text-sm text-slate-400">
-                                <li><a href="#solutions" className="hover:text-white transition-colors">Solutions</a></li>
+                                <li><a href="#why-now" className="hover:text-white transition-colors">Why Now</a></li>
                                 <li><a href="#how-it-works" className="hover:text-white transition-colors">How It Works</a></li>
                                 <li><a href="#use-cases" className="hover:text-white transition-colors">Use Cases</a></li>
                                 <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
+                                <li><a href="#faq" className="hover:text-white transition-colors">FAQ</a></li>
                             </ul>
                         </div>
                         <div>
                             <h4 className="font-bold text-white mb-6">Developers</h4>
                             <ul className="space-y-4 text-sm text-slate-400">
-                                <li><a href="#" className="hover:text-white transition-colors">Documentation</a></li>
-                                <li><a href="#" className="hover:text-white transition-colors">API Reference</a></li>
+                                <li><a href="#developer-platform" className="hover:text-white transition-colors">Developer Platform</a></li>
+                                <li><a href="#comparison" className="hover:text-white transition-colors">SatyaStack vs Traditional</a></li>
                                 <li><a href="https://github.com/satyastack" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a></li>
-                                <li><a href="#" className="hover:text-white transition-colors">Status</a></li>
+                                <li><a href="#roadmap" className="hover:text-white transition-colors">Roadmap</a></li>
                             </ul>
                         </div>
                         <div>

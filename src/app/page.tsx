@@ -16,6 +16,7 @@ import Navbar from "@/components/Navbar";
 import Roadmap from "@/components/Roadmap";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import FAQ from "@/components/FAQ";
 import ContactFormModal from "@/components/ContactFormModal";
 
 export default function Home() {
@@ -39,6 +40,7 @@ export default function Home() {
       <Comparison />
       <Pricing />
       <Roadmap />
+      <FAQ />
       <CTA onRequestAccess={openModal} />
       <Footer />
       <ContactFormModal isOpen={isModalOpen} onClose={closeModal} />

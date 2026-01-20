@@ -15,13 +15,46 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SatyaStack | Privacy-Preserving Compliance Infrastructure",
-  description: "SatyaStack is the privacy-preserving compliance stack for India’s regulated digital economy. Built with Zero-Knowledge Proofs to meet DPDP, FIU, and RBI requirements without storing PII.",
+  title: "SatyaStack | Privacy-Preserving KYC & Zero-Knowledge Compliance for India",
+  description: "India's first privacy-preserving KYC platform using zero-knowledge proofs. DPDP compliant, FIU crypto compliance ready, RBI compliance infrastructure for AML compliance India. Prove compliance without revealing personal data.",
+  keywords: "privacy preserving KYC, zero knowledge KYC, DPDP compliance, FIU crypto compliance, RBI compliance infrastructure, AML compliance India, privacy preserving AML, zero knowledge proofs, data protection India",
   openGraph: {
-    title: "SatyaStack | Privacy-Preserving Compliance Infrastructure",
-    description: "Prove Compliance Without Revealing Personal Data. Built with Zero-Knowledge Proofs.",
+    title: "SatyaStack | Privacy-Preserving KYC & Zero-Knowledge Compliance",
+    description: "India's first privacy-preserving KYC platform. Prove compliance without revealing personal data using zero-knowledge proofs. DPDP, FIU, and RBI compliant.",
     type: "website",
     locale: "en_IN",
+    url: "https://satyastack.com",
+    siteName: "SatyaStack",
+    images: [
+      {
+        url: "https://satyastack.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "SatyaStack - Privacy-Preserving Compliance Infrastructure for India",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@satyastack",
+    creator: "@satyastack",
+    title: "SatyaStack | Privacy-Preserving KYC & Zero-Knowledge Compliance",
+    description: "India's first privacy-preserving KYC platform using zero-knowledge proofs. DPDP, FIU, and RBI compliant.",
+    images: ["https://satyastack.com/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://satyastack.com",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
