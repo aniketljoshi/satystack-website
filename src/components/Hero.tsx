@@ -1,7 +1,8 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { ArrowRight, PlayCircle, Clock } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 
 const Hero3DScene = dynamic(() => import("./Hero3DScene"), { ssr: false });
@@ -67,14 +68,14 @@ export default function Hero({ onRequestAccess }: HeroProps) {
                         Request Early Access
                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </button>
-                    <button className="w-full sm:w-auto px-8 py-4 bg-white/5 text-white border border-white/10 rounded-2xl font-bold text-lg hover:bg-white/10 hover:border-white/20 backdrop-blur-sm transition-all flex items-center justify-center gap-3">
-                        <PlayCircle className="w-5 h-5 text-blue-400" />
-                        Watch Demo
-                        <span className="px-2 py-0.5 text-xs font-bold bg-amber-500/20 text-amber-400 border border-amber-500/30 rounded-full flex items-center gap-1">
-                            <Clock className="w-3 h-3" />
-                            Soon
-                        </span>
-                    </button>
+                    <Link
+                        href="/demo"
+                        className="w-full sm:w-auto px-8 py-4 bg-white/5 text-white border border-white/10 rounded-2xl font-bold text-lg hover:bg-white/10 hover:border-white/20 backdrop-blur-sm transition-all flex items-center justify-center gap-3 group"
+                    >
+                        <Sparkles className="w-5 h-5 text-emerald-400" />
+                        Try Interactive Demo
+                        <ArrowRight className="w-4 h-4 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                    </Link>
                 </motion.div>
 
                 <motion.div

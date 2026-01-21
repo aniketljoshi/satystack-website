@@ -18,6 +18,12 @@ export const metadata: Metadata = {
   title: "SatyaStack | Privacy-Preserving KYC & Zero-Knowledge Compliance for India",
   description: "India's first privacy-preserving KYC platform using zero-knowledge proofs. DPDP compliant, FIU crypto compliance ready, RBI compliance infrastructure for AML compliance India. Prove compliance without revealing personal data.",
   keywords: "privacy preserving KYC, zero knowledge KYC, DPDP compliance, FIU crypto compliance, RBI compliance infrastructure, AML compliance India, privacy preserving AML, zero knowledge proofs, data protection India",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-touch-icon.svg",
+  },
   openGraph: {
     title: "SatyaStack | Privacy-Preserving KYC & Zero-Knowledge Compliance",
     description: "India's first privacy-preserving KYC platform. Prove compliance without revealing personal data using zero-knowledge proofs. DPDP, FIU, and RBI compliant.",

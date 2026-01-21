@@ -1,6 +1,7 @@
 "use client";
 
 import { Twitter, Linkedin, Github, Shield } from "lucide-react";
+import Link from 'next/link';
 
 export default function Footer() {
     return (
@@ -51,6 +52,7 @@ export default function Footer() {
                             <h4 className="font-bold text-white mb-6">Platform</h4>
                             <ul className="space-y-4 text-sm text-slate-400">
                                 <li><a href="#why-now" className="hover:text-white transition-colors">Why Now</a></li>
+                                <li><Link href="/learn/zero-knowledge" className="hover:text-white transition-colors text-blue-400 font-medium">Learning Center</Link></li>
                                 <li><a href="#how-it-works" className="hover:text-white transition-colors">How It Works</a></li>
                                 <li><a href="#use-cases" className="hover:text-white transition-colors">Use Cases</a></li>
                                 <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>

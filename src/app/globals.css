@@ -81,3 +81,19 @@
     text-wrap: balance;
   }
 }
+
+/* Ensure cursor pointer on all interactive elements */
+@layer base {
+  button,
+  [role="button"],
+  a,
+  select,
+  [type="button"],
+  [type="submit"],
+  [type="reset"],
+  label[for],
+  summary,
+  [tabindex]:not([tabindex="-1"]) {
+    cursor: pointer;
+  }
+}

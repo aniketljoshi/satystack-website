@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZKP Illustrated - The Aadhar Example</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #0f172a;
+            color: white;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+
+        .slide.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .card {
+            width: 300px;
+            height: 180px;
+            background: linear-gradient(135deg, #fbbf24, #d97706);
+            border-radius: 12px;
+            position: relative;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            color: black;
+        }
+
+        .red-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(220, 38, 38, 0.2);
+            border: 2px solid #ef4444;
+            border-radius: 12px;
+            display: none;
+        }
+
+        .highlight-box {
+            position: absolute;
+            border: 2px dashed #ef4444;
+            background: rgba(239, 68, 68, 0.2);
+        }
+
+        .vault {
+            width: 200px;
+            height: 240px;
+            background: #334155;
+            border: 4px solid #475569;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .lock-icon {
+            font-size: 4rem;
+            color: #94a3b8;
+        }
+
+        .proof-ticket {
+            width: 180px;
+            height: 100px;
+            background: #ecfdf5;
+            border: 2px solid #10b981;
+            border-radius: 8px;
+            color: #065f46;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            position: absolute;
+        }
+
+        .bank-teller {
+            width: 120px;
+            height: 120px;
+            background: #1e293b;
+            border-radius: 50%;
+            border: 4px solid #64748b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CONTROL PANEL -->
+    <div style="position: fixed; bottom: 20px; right: 20px; z-index: 100; display: flex; gap: 10px;">
+        <button onclick="nextSlide()" class="px-4 py-2 bg-blue-600 rounded text-white font-bold hover:bg-blue-500">Next
+            Step &rarr;</button>
+    </div>
+
+    <!-- SLIDE 1: INTRO -->
+    <div class="slide active" id="slide1">
+        <h1 class="text-5xl font-bold mb-6 text-center">Understanding<br><span class="text-blue-400">Zero-Knowledge
+                Proofs</span></h1>
+        <p class="text-xl text-slate-400 mb-8">Concept: Protecting the "Aadhar Data"</p>
+        <div class="p-4 bg-slate-800 rounded-xl border border-slate-700 max-w-lg text-center">
+            <p>"How to prove you are eligible... without revealing who you are."</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 2: THE PROBLEM -->
+    <div class="slide" id="slide2">
+        <h2 class="text-3xl font-bold mb-12">The "Old World" Problem</h2>
+        <div class="flex items-center gap-12">
+            <!-- User -->
+            <div class="text-center">
+                <div class="text-6xl mb-4">You</div>
+                <div class="card" id="aadhar-full">
+                    <div class="font-bold text-lg mb-2">AADHAR CARD</div>
+                    <div class="text-sm">Name: <span class="font-bold">Rahul Sharma</span></div>
+                    <div class="text-sm">DOB: <span class="font-bold">15/08/1995</span></div>
+                    <div class="text-sm">Address: <span class="font-bold">Mumbai, MH...</span></div>
+                    <div class="text-sm mt-2 font-mono">1234 5678 9012</div>
+
+                    <!-- DANGER ZONES -->
+                    <div class="highlight-box" style="top: 45px; left: 15px; width: 150px; height: 20px;"></div>
+                    <div class="highlight-box" style="top: 65px; left: 15px; width: 120px; height: 20px;"></div>
+                    <div class="highlight-box" style="top: 85px; left: 15px; width: 200px; height: 20px;"></div>
+                </div>
+            </div>
+
+            <div class="text-4xl text-slate-600">&rarr;</div>
+
+            <!-- Bank -->
+            <div class="text-center opacity-50">
+                <div class="text-6xl mb-4">Bank / App</div>
+                <div class="w-64 h-40 border-2 border-dashed border-slate-600 rounded flex items-center justify-center">
+                    Receives EVERYTHING
+                </div>
+            </div>
+        </div>
+        <p class="mt-12 text-red-400 text-xl font-bold bg-red-900/20 px-6 py-2 rounded-full border border-red-500/50">
+            ⚠️ Problem: You shared TOO MUCH private data just to say "I exist".
+        </p>
+    </div>
+
+    <!-- SLIDE 3: DATA SOURCES (NEW) -->
+    <div class="slide" id="slide3">
+        <h2 class="text-3xl font-bold mb-8">Where does the Data Come From?</h2>
+        <div class="flex gap-8 justify-center items-center w-full max-w-5xl">
+
+            <!-- Source 1: Physical Scan -->
+            <div class="flex flex-col items-center opacity-50 hover:opacity-100 transition-opacity">
+                <div
+                    class="w-32 h-20 bg-slate-700 rounded-lg flex items-center justify-center border-2 border-slate-600 mb-4">
+                    <span class="text-4xl">📷</span>
+                </div>
+                <div class="text-slate-300 font-bold mb-1">OCR Scan</div>
+                <div class="text-xs text-slate-500 max-w-[150px] text-center">Scan physical card using phone camera
+                </div>
+            </div>
+
+            <div class="text-2xl text-slate-600">+</div>
+
+            <!-- Source 2: DigiLocker -->
+            <div class="flex flex-col items-center">
+                <div
+                    class="w-32 h-20 bg-blue-900/30 rounded-lg flex items-center justify-center border-2 border-blue-500 mb-4 shadow-[0_0_15px_rgba(59,130,246,0.5)]">
+                    <span class="text-4xl">☁️</span>
+                </div>
+                <div class="text-blue-400 font-bold mb-1">DigiLocker / API</div>
+                <div class="text-xs text-slate-500 max-w-[150px] text-center">Fetch verified data directly from Gov
+                    Source</div>
+            </div>
+
+            <div class="text-2xl text-slate-600">&rarr;</div>
+
+            <!-- Destination: Local Device -->
+            <div class="flex flex-col items-center">
+                <div
+                    class="w-24 h-40 bg-slate-800 rounded-2xl border-4 border-slate-600 flex flex-col items-center justify-center relative">
+                    <span class="text-4xl mb-2">📱</span>
+                    <span class="text-[10px] text-slate-400">Local Storage</span>
+
+                    <!-- Incoming Data Animation -->
+                    <div class="absolute -left-10 top-1/2 w-8 h-1 bg-blue-500 animate-pulse"></div>
+                </div>
+                <div class="text-white font-bold mt-4">Local Device</div>
+                <div class="text-xs text-green-400 font-mono mt-1">Foundational ID Layer</div>
+            </div>
+
+        </div>
+        <p class="mt-12 text-slate-400 text-lg max-w-2xl text-center">
+            User fetches data from trusted sources (DigiLocker) or scans physical ID.
+            <br><span class="text-white font-bold">Crucial:</span> This raw data lives <span class="text-green-400">ONLY
+                on the User's Device</span>.
+        </p>
+    </div>
+
+    <!-- SLIDE 4: THE ZKP SOLUTION (UPDATED with SatyaStack) -->
+    <div class="slide" id="slide4">
+        <h2 class="text-3xl font-bold mb-8">Role of SatyaStack</h2>
+        <div class="flex items-center gap-12 relative w-full justify-center">
+
+            <!-- Input Side -->
+            <div class="relative group">
+                <div class="card scale-75" id="aadhar-input">
+                    <div class="font-bold">AADHAR</div>
+                    <div>Rahul Sharma</div>
+                </div>
+                <div class="text-center mt-2 text-sm text-slate-400">User Device</div>
+            </div>
+
+            <!-- The Vault (SatyaStack) -->
+            <div class="relative">
+                <div class="vault column shadow-2xl shadow-blue-500/20 border-blue-500/50">
+                    <div class="lock-icon text-blue-400">🛡️</div>
+                    <div class="text-center mt-4 font-bold text-white text-xl">SatyaStack</div>
+                    <div class="text-[10px] text-center text-blue-300 mt-1 px-4">ZKP Infrastructure Layer</div>
+                </div>
+
+                <!-- Connector Lines -->
+                <div class="absolute top-1/2 -left-12 w-12 h-1 bg-gradient-to-r from-transparent to-blue-500/50"></div>
+                <div class="absolute top-1/2 -right-12 w-12 h-1 bg-gradient-to-r from-blue-500/50 to-transparent"></div>
+            </div>
+
+            <!-- Output Side -->
+            <div class="relative w-40 h-40 flex flex-col items-center justify-center">
+                <div class="proof-ticket relative scale-90" id="proof-output">
+                    <div class="text-4xl mb-2">✅</div>
+                    <div class="font-bold text-lg">PROOF</div>
+                    <div class="text-xs text-center mt-1">SatyaStack Verified</div>
+                </div>
+                <div class="text-center mt-4 text-sm text-slate-400">To: Bank / App</div>
+            </div>
+
+        </div>
+        <p class="mt-12 text-blue-400 text-xl font-medium max-w-3xl text-center leading-relaxed">
+            SatyaStack sits <span class="text-white font-bold">in between</span>.
+            <br>It provides the <span class="text-white">mathematical infrastructure</span> to convert raw ID data into
+            verifiable proofs, without ever storing the data itself.
+        </p>
+    </div>
+
+    <!-- SLIDE 5: THE FINAL EXCHANGE -->
+    <div class="slide" id="slide5">
+        <h2 class="text-3xl font-bold mb-12">The Final Ecosystem</h2>
+
+        <div class="grid grid-cols-3 gap-8 w-full max-w-6xl items-center">
+            <!-- User -->
+            <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 text-center">
+                <div class="text-4xl mb-2">🏠 User</div>
+                <p class="text-sm text-slate-400 mb-4">Holds Raw Data</p>
+                <div class="w-full h-1 bg-slate-700 rounded-full overflow-hidden">
+                    <div class="w-full h-full bg-green-500"></div>
+                </div>
+                <p class="text-[10px] text-green-400 mt-1">100% Privacy</p>
+            </div>
+
+            <!-- SatyaStack (Middle) -->
+            <div class="bg-blue-900/20 p-6 rounded-xl border border-blue-500/50 text-center relative">
+                <div
+                    class="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] px-2 py-0.5 rounded-full uppercase tracking-wider font-bold">
+                    Infrastructure</div>
+                <div class="text-4xl mb-2">🛡️ SatyaStack</div>
+                <p class="text-sm text-blue-300 mb-4">Processes Proofs</p>
+                <div class="w-full h-1 bg-slate-700 rounded-full overflow-hidden">
+                    <div class="w-full h-full bg-blue-500"></div>
+                </div>
+                <p class="text-[10px] text-blue-400 mt-1">Zero Data Storage</p>
+            </div>
+
+            <!-- Bank -->
+            <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 text-center">
+                <div class="text-4xl mb-2">🏦 Bank</div>
+                <p class="text-sm text-slate-400 mb-4">Receives Proof</p>
+                <div class="w-full h-1 bg-slate-700 rounded-full overflow-hidden">
+                    <div class="w-full h-full bg-purple-500"></div>
+                </div>
+                <p class="text-[10px] text-purple-400 mt-1">100% Compliance</p>
+            </div>
+        </div>
+
+        <div class="mt-16 text-center max-w-2xl mx-auto p-6 bg-slate-900 rounded-xl border border-slate-700/50">
+            <h3 class="text-xl font-bold text-white mb-2">Summary</h3>
+            <p class="text-slate-400">
+                1. Data comes from <span class="text-white">DigiLocker/Scan</span> → Stored on <span
+                    class="text-white">Device</span>.<br>
+                2. <span class="text-blue-400 font-bold">SatyaStack</span> converts Data → Proof.<br>
+                3. Bank receives <span class="text-white">Proof</span> (Compliance) without seeing Data (Privacy).
+            </p>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 5;
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                // Animate out current
+                gsap.to(`#slide${currentSlide}`, { opacity: 0, pointerEvents: 'none', duration: 0.5 });
+
+                currentSlide++;
+
+                // Animate in next
+                const next = document.querySelector(`#slide${currentSlide}`);
+                gsap.to(next, { opacity: 1, pointerEvents: 'auto', duration: 0.5, delay: 0.2 });
+
+                // Special Slide Animations
+                if (currentSlide === 4) { // Updated to Slide 4 for ZKP animation
+                    runZKPAnimation();
+                }
+            }
+        }
+
+
+        function runZKPAnimation() {
+            const tl = gsap.timeline({ delay: 1 });
+
+            // 1. Move Aadhar into Vault
+            tl.to("#aadhar-input", { x: 180, scale: 0.5, opacity: 0, duration: 1.5, ease: "power2.inOut" });
+
+            // 2. Vault Pulse
+            tl.to(".vault", { scale: 1.1, borderColor: "#3b82f6", duration: 0.2, yoyo: true, repeat: 3 });
+
+            // 3. Output Ticket
+            tl.to("#proof-output", { x: 50, opacity: 1, scale: 1.2, duration: 1, ease: "back.out(1.7)" });
+        }
+    </script>
+</body>
+
+</html>
