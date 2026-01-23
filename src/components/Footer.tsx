@@ -1,8 +1,7 @@
 "use client";
 
-import { Twitter, Linkedin, Github } from "lucide-react";
+import { Twitter, Linkedin, Github, Shield } from "lucide-react";
 import Link from 'next/link';
-import SatyaStackLogo from "./SatyaStackLogo";
 
 export default function Footer() {
     return (
@@ -10,11 +9,39 @@ export default function Footer() {
             <div className="container mx-auto px-6">
                 <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-16">
                     <div className="max-w-sm">
-                        <div className="mb-6">
-                            <SatyaStackLogo size="md" />
+                        <div className="flex items-center gap-3 mb-6">
+                            <svg
+                                className="w-8 h-8"
+                                viewBox="0 0 512 512"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M256 24 L456 96 V272 C456 360 352 448 256 488 C160 448 56 360 56 272 V96 Z"
+                                    fill="url(#shieldGradientFooter)"
+                                />
+                                <path d="M96 160 H416" stroke="rgba(255,255,255,0.35)" strokeWidth="10" />
+                                <path d="M112 216 H400" stroke="rgba(255,255,255,0.30)" strokeWidth="10" />
+                                <path d="M128 272 H384" stroke="rgba(255,255,255,0.25)" strokeWidth="10" />
+                                <path
+                                    d="M168 260 L232 320 L352 180"
+                                    stroke="white"
+                                    strokeWidth="44"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                />
+                                <defs>
+                                    <linearGradient id="shieldGradientFooter" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stopColor="#3AB0FF" />
+                                        <stop offset="50%" stopColor="#0B5ED7" />
+                                        <stop offset="100%" stopColor="#083A9B" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <span className="font-bold text-xl text-white">SatyaStack</span>
                         </div>
                         <p className="text-slate-400 leading-relaxed mb-6">
-                            Privacy-Preserving Compliance Infrastructure for India's regulated digital economy.
+                            Verify compliance. Reveal nothing.
                             Zero-knowledge proofs for compliant privacy.
                         </p>
                         <div className="flex gap-4">

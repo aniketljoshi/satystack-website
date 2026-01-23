@@ -1,57 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" fill="none">
-  <defs>
-    <!-- Background gradient -->
-    <linearGradient id="bgGradient" x1="90" y1="0" x2="90" y2="180" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#2196f3"/>
-      <stop offset="100%" stop-color="#0d47a1"/>
-    </linearGradient>
-    <!-- Main shield gradient -->
-    <linearGradient id="mainGradient" x1="90" y1="30" x2="90" y2="150" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#1e88e5"/>
-      <stop offset="40%" stop-color="#1565c0"/>
-      <stop offset="100%" stop-color="#0d47a1"/>
-    </linearGradient>
-    <!-- Top highlight - cyan -->
-    <linearGradient id="topHighlight" x1="90" y1="30" x2="90" y2="70" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#4dd0e1"/>
-      <stop offset="100%" stop-color="#00bcd4" stop-opacity="0"/>
-    </linearGradient>
-    <!-- Inner shield gradient -->
-    <linearGradient id="innerGradient" x1="90" y1="45" x2="90" y2="140" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#42a5f5"/>
-      <stop offset="50%" stop-color="#1e88e5"/>
-      <stop offset="100%" stop-color="#1565c0"/>
-    </linearGradient>
-    <!-- Glow filter -->
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
-      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.2 0 0 0 0 0.8 0 0 0 0 0.9 0 0 0 0.5 0"/>
-      <feMerge>
-        <feMergeNode/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-  </defs>
-  
-  <!-- Rounded background -->
-  <rect width="180" height="180" rx="36" fill="url(#bgGradient)"/>
-  
-  <!-- Main shield with glow -->
-  <path d="M90 30L45 48v36c0 33 20.4 63.6 45 72 24.6-8.4 45-39 45-72V48L90 30z" 
-        fill="url(#mainGradient)" filter="url(#glow)"/>
-  
-  <!-- Top cyan highlight -->
-  <path d="M90 30L45 48v14c25-4 45-4 90 0V48L90 30z" 
-        fill="url(#topHighlight)" opacity="0.6"/>
-  
-  <!-- Inner shield -->
-  <path d="M90 42L54 57v30c0 24.6 15.3 47.4 36 54 20.7-6.6 36-29.4 36-54V57L90 42z" 
-        fill="url(#innerGradient)"/>
-  
-  <!-- Checkmark -->
-  <path d="M68 95l18 18 36-36" 
-        stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  
-  <!-- Glossy highlight -->
-  <ellipse cx="90" cy="60" rx="28" ry="12" fill="white" opacity="0.12"/>
+  <rect width="180" height="180" rx="40" fill="#2563eb"/>
+  <path d="M90 30L45 52.5v33.75c0 30.94 19.13 59.63 45 67.5 25.87-7.87 45-36.56 45-67.5V52.5L90 30z" fill="white"/>
+  <path d="M90 45L52.5 63.75v25.31c0 23.06 14.63 44.44 37.5 50.62 22.87-6.18 37.5-27.56 37.5-50.62V63.75L90 45z" fill="#2563eb"/>
+  <path d="M78 90l16.5 16.5 33-33" stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

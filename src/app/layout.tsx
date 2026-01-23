@@ -20,13 +20,12 @@ export const metadata: Metadata = {
   keywords: "privacy preserving KYC, zero knowledge KYC, DPDP compliance, FIU crypto compliance, RBI compliance infrastructure, AML compliance India, privacy preserving AML, zero knowledge proofs, data protection India",
   icons: {
     icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/shield.svg", type: "image/svg+xml" },
     ],
-    apple: "/apple-touch-icon.svg",
-    shortcut: "/favicon.svg",
+    apple: "/apple-touch-icon.png",
   },
-  manifest: "/site.webmanifest",
   openGraph: {
     title: "SatyaStack | Privacy-Preserving KYC & Zero-Knowledge Compliance",
     description: "India's first privacy-preserving KYC platform. Prove compliance without revealing personal data using zero-knowledge proofs. DPDP, FIU, and RBI compliant.",
@@ -39,7 +38,7 @@ export const metadata: Metadata = {
         url: "https://satyastack.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "SatyaStack - Privacy-Preserving Compliance Infrastructure for India",
+        alt: "SatyaStack - Verify compliance. Reveal nothing.",
       },
     ],
   },

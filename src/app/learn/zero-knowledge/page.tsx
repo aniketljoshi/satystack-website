@@ -1,9 +1,8 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { Lock, Smartphone, FileCheck, ArrowRight, Server, CheckCircle2, XCircle, BookOpen } from 'lucide-react';
+import { Shield, Lock, Smartphone, FileCheck, ArrowRight, Server, CheckCircle2, XCircle, BookOpen } from 'lucide-react';
 import Link from 'next/link';
-import SatyaStackLogo from '@/components/SatyaStackLogo';
 
 export default function LearnZKP() {
     return (
@@ -11,8 +10,25 @@ export default function LearnZKP() {
             {/* Navigation Header */}
             <nav className="fixed top-0 w-full z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800 shadow-xl">
                 <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-                    <Link href="/" className="group">
-                        <SatyaStackLogo size="sm" />
+                    <Link href="/" className="flex items-center gap-3 group">
+                        <svg className="w-8 h-8" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M256 24 L456 96 V272 C456 360 352 448 256 488 C160 448 56 360 56 272 V96 Z" fill="url(#shieldGradientLearn)" />
+                            <path d="M96 160 H416" stroke="rgba(255,255,255,0.35)" strokeWidth="10" />
+                            <path d="M112 216 H400" stroke="rgba(255,255,255,0.30)" strokeWidth="10" />
+                            <path d="M128 272 H384" stroke="rgba(255,255,255,0.25)" strokeWidth="10" />
+                            <path d="M168 260 L232 320 L352 180" stroke="white" strokeWidth="44" strokeLinecap="round" strokeLinejoin="round" />
+                            <defs>
+                                <linearGradient id="shieldGradientLearn" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stopColor="#3AB0FF" />
+                                    <stop offset="50%" stopColor="#0B5ED7" />
+                                    <stop offset="100%" stopColor="#083A9B" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div className="flex flex-col">
+                            <span className="font-bold text-lg text-white tracking-tight leading-tight">SatyaStack</span>
+                            <span className="text-[10px] text-slate-400 font-medium tracking-wide hidden sm:block">Verify compliance. Reveal nothing.</span>
+                        </div>
                     </Link>
                     <Link href="/" className="text-sm font-medium text-slate-400 hover:text-white transition-colors flex items-center gap-2">
                         <span>Close Guide</span>
