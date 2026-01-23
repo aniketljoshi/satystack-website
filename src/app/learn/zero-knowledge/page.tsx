@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { Shield, Lock, Smartphone, FileCheck, ArrowRight, Server, CheckCircle2, XCircle, BookOpen } from 'lucide-react';
+import { Lock, Smartphone, FileCheck, ArrowRight, Server, CheckCircle2, XCircle, BookOpen } from 'lucide-react';
 import Link from 'next/link';
+import SatyaStackLogo from '@/components/SatyaStackLogo';
 
 export default function LearnZKP() {
     return (
@@ -10,15 +11,8 @@ export default function LearnZKP() {
             {/* Navigation Header */}
             <nav className="fixed top-0 w-full z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800 shadow-xl">
                 <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-                    <Link href="/" className="flex items-center gap-2 group">
-                        <div className="bg-blue-600 p-1.5 rounded-lg group-hover:bg-blue-500 transition-colors">
-                            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 3L4 7v6c0 5.5 3.4 10.6 8 12 4.6-1.4 8-6.5 8-12V7l-8-4z" fill="white" />
-                                <path d="M12 5.5L6 8.5v4.5c0 4.1 2.6 7.9 6 9 3.4-1.1 6-4.9 6-9V8.5l-6-3z" fill="#2563eb" />
-                                <path d="M10 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </div>
-                        <span className="font-bold text-lg text-white tracking-tight">SatyaStack</span>
+                    <Link href="/" className="group">
+                        <SatyaStackLogo size="sm" />
                     </Link>
                     <Link href="/" className="text-sm font-medium text-slate-400 hover:text-white transition-colors flex items-center gap-2">
                         <span>Close Guide</span>

@@ -21,9 +21,12 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "32x32" },
     ],
     apple: "/apple-touch-icon.svg",
+    shortcut: "/favicon.svg",
   },
+  manifest: "/site.webmanifest",
   openGraph: {
     title: "SatyaStack | Privacy-Preserving KYC & Zero-Knowledge Compliance",
     description: "India's first privacy-preserving KYC platform. Prove compliance without revealing personal data using zero-knowledge proofs. DPDP, FIU, and RBI compliant.",

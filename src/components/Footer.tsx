@@ -1,7 +1,8 @@
 "use client";
 
-import { Twitter, Linkedin, Github, Shield } from "lucide-react";
+import { Twitter, Linkedin, Github } from "lucide-react";
 import Link from 'next/link';
+import SatyaStackLogo from "./SatyaStackLogo";
 
 export default function Footer() {
     return (
@@ -9,11 +10,8 @@ export default function Footer() {
             <div className="container mx-auto px-6">
                 <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-16">
                     <div className="max-w-sm">
-                        <div className="flex items-center gap-2 mb-6">
-                            <div className="bg-blue-600 p-1.5 rounded-lg">
-                                <Shield className="w-5 h-5 text-white" />
-                            </div>
-                            <span className="font-bold text-xl text-white">SatyaStack</span>
+                        <div className="mb-6">
+                            <SatyaStackLogo size="md" />
                         </div>
                         <p className="text-slate-400 leading-relaxed mb-6">
                             Privacy-Preserving Compliance Infrastructure for India's regulated digital economy.
