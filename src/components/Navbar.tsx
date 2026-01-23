@@ -90,7 +90,7 @@ export default function Navbar({ onRequestAccess }: NavbarProps) {
                         <span className="font-bold text-xl text-white tracking-tight leading-tight">
                             SatyaStack
                         </span>
-                        <span className="text-[10px] text-slate-400 font-medium tracking-wide hidden sm:block">
+                        <span className="text-[10px] text-slate-400 font-medium tracking-wide">
                             Verify compliance. Reveal nothing.
                         </span>
                     </div>

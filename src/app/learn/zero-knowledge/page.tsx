@@ -27,7 +27,7 @@ export default function LearnZKP() {
                         </svg>
                         <div className="flex flex-col">
                             <span className="font-bold text-lg text-white tracking-tight leading-tight">SatyaStack</span>
-                            <span className="text-[10px] text-slate-400 font-medium tracking-wide hidden sm:block">Verify compliance. Reveal nothing.</span>
+                            <span className="text-[10px] text-slate-400 font-medium tracking-wide">Verify compliance. Reveal nothing.</span>
                         </div>
                     </Link>
                     <Link href="/" className="text-sm font-medium text-slate-400 hover:text-white transition-colors flex items-center gap-2">
