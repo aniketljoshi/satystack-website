@@ -9,7 +9,7 @@ export default function Architecture() {
     return (
         <div className="min-h-screen bg-[#FDFDFC] font-sans selection:bg-blue-100 selection:text-blue-900 text-slate-900">
             {/* Navigation - Custom simplified version for this whitepaper */}
-            <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+            <nav className="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 shadow-sm">
                 <div className="container mx-auto px-6 h-20 flex items-center justify-between">
                     <Link href="/" className="flex items-center gap-3 group">
                         {/* Main Website Logo SVG */}
@@ -28,14 +28,14 @@ export default function Architecture() {
                             </defs>
                         </svg>
                         <div className="flex flex-col">
-                            <span className="font-bold text-xl tracking-tight leading-loose text-slate-900">SatyaStack</span>
-                            <span className="text-[10px] text-slate-500 font-medium tracking-wide -mt-1">Verify compliance. Reveal nothing.</span>
+                            <span className="font-bold text-xl tracking-tight leading-loose text-white">SatyaStack</span>
+                            <span className="text-[10px] text-slate-400 font-medium tracking-wide -mt-1">Verify compliance. Reveal nothing.</span>
                         </div>
                     </Link>
 
                     <Link
                         href="/"
-                        className="text-sm font-medium text-slate-500 hover:text-blue-600 transition-colors flex items-center gap-1.5 px-3 py-1.5 rounded-full hover:bg-slate-50"
+                        className="text-sm font-medium text-slate-300 hover:text-white transition-colors flex items-center gap-1.5 px-3 py-1.5 rounded-full hover:bg-slate-800"
                     >
                         <ArrowLeft className="w-4 h-4" />
                         Back to Home
@@ -52,8 +52,8 @@ export default function Architecture() {
                                 <AlertTriangle className="w-3 h-3" />
                                 Pilot Phase Documentation
                             </div>
-                            {/* Fixed H1 to be on one line if space permits, or wrap naturally without forcing <br> */}
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-8 tracking-tight leading-tight">
+                            {/* Fixed H1 to be on one line */}
+                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-8 tracking-tight leading-tight whitespace-nowrap">
                                 Architecture & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-indigo-600">Trust Model</span>
                             </h1>
                             <p className="text-xl md:text-2xl text-slate-600 leading-relaxed font-light">
@@ -477,6 +477,112 @@ export default function Architecture() {
                                 Performance benchmarking is a key part of our current pilot phase.
                             </p>
                         </div>
+                    </div>
+                </section>
+
+                {/* 11. Conceptual Integration Flow (Pilot Phase) */}
+                <section className="mb-32">
+                    <div className="flex items-center gap-4 mb-8">
+                        <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-blue-50 text-blue-600 font-bold text-lg shadow-sm border border-blue-100">11</div>
+                        <h2 className="text-2xl font-bold text-slate-900">Conceptual Integration Flow (Pilot Phase)</h2>
+                    </div>
+
+                    <div className="bg-white border border-slate-200 rounded-3xl p-8 md:p-10 shadow-sm">
+
+                        {/* 11.1 Purpose */}
+                        <div className="mb-10">
+                            <h3 className="text-lg font-bold text-slate-900 mb-3">Purpose of This Section</h3>
+                            <p className="text-slate-600 leading-relaxed">
+                                This section clarifies the intended interaction model for banks and fintech partners participating in the pilot program.
+                                It describes the conceptual flow of a verification request without defining specific technical implementation details,
+                                as these may vary by pilot partner.
+                            </p>
+                        </div>
+
+                        <div className="border-t border-slate-100 my-8"></div>
+
+                        {/* 11.2 Verification Initiation */}
+                        <div className="mb-10">
+                            <h3 className="text-lg font-bold text-slate-900 mb-3">Verification Initiation (Conceptual)</h3>
+                            <p className="text-slate-600 leading-relaxed mb-4">
+                                The flow begins when a Verifier (e.g., a Bank App) requires a specific compliance check to proceed with a user action (e.g., opening an account).
+                            </p>
+                            <ul className="list-disc list-inside text-slate-600 space-y-2 ml-2">
+                                <li>The Verifier conceptually asks: <span className="font-medium text-slate-800">"Does User X meet Criteria Y?"</span> (e.g., Is Resident AND Age &gt; 18?).</li>
+                                <li>The Verifier does <strong>not</strong> ask for the underlying document (e.g., "Send me the Passport").</li>
+                            </ul>
+                        </div>
+
+                        {/* 11.3 User Consent & Proof Generation */}
+                        <div className="mb-10">
+                            <h3 className="text-lg font-bold text-slate-900 mb-3">User Consent & Proof Generation</h3>
+                            <p className="text-slate-600 leading-relaxed mb-4">
+                                The user is prompted on their device to approve the request.
+                            </p>
+                            <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                                <ul className="space-y-3">
+                                    <li className="flex gap-3 items-start text-slate-700">
+                                        <Shield className="w-5 h-5 text-emerald-600 mt-0.5 shrink-0" />
+                                        <span>The <strong>SatyaStack</strong>-compatible user application accesses the locally stored encrypted credential.</span>
+                                    </li>
+                                    <li className="flex gap-3 items-start text-slate-700">
+                                        <Lock className="w-5 h-5 text-emerald-600 mt-0.5 shrink-0" />
+                                        <span>A Zero-Knowledge Proof is generated <strong>locally on the device</strong>.</span>
+                                    </li>
+                                    <li className="flex gap-3 items-start text-slate-700">
+                                        <AlertTriangle className="w-5 h-5 text-amber-500 mt-0.5 shrink-0" />
+                                        <span className="italic">Crucial: The raw PII data never leaves the device during this calculation.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        {/* 11.4 Proof Presentation & Validation */}
+                        <div className="mb-10">
+                            <h3 className="text-lg font-bold text-slate-900 mb-3">Proof Presentation & Validation</h3>
+                            <p className="text-slate-600 leading-relaxed">
+                                The generated cryptographic proof is presented for verification, either directly to the Verifier or via SatyaStack infrastructure, depending on pilot configuration.
+                                The validation function returns a simple <strong>TRUE</strong> or <strong>FALSE</strong>.
+                            </p>
+                        </div>
+
+                        {/* 11.5 Compliance Logging */}
+                        <div className="mb-10">
+                            <h3 className="text-lg font-bold text-slate-900 mb-3">Compliance Logging & Oversight</h3>
+                            <p className="text-slate-600 leading-relaxed">
+                                Upon successful verification, an immutable audit record is created.
+                            </p>
+                            <ul className="list-disc list-inside text-slate-600 space-y-2 ml-2 mt-2">
+                                <li><strong>Included:</strong> Timestamp, Proof ID, Circuit ID, Result (Success/Fail).</li>
+                                <li><strong>Excluded:</strong> User Identity, PII, Raw Credential Data.</li>
+                            </ul>
+                        </div>
+
+                        <div className="border-t border-slate-100 my-8"></div>
+
+                        {/* 11.6 Explicit Non-Goals */}
+                        <div>
+                            <h3 className="text-lg font-bold text-slate-900 mb-4">Explicit Non-Goals (Pilot Phase)</h3>
+                            <div className="grid md:grid-cols-2 gap-4">
+                                <div className="flex gap-3 items-start p-4 bg-slate-50 rounded-lg">
+                                    <div className="w-5 h-5 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5">✕</div>
+                                    <span className="text-sm text-slate-600">No identity lookup database.</span>
+                                </div>
+                                <div className="flex gap-3 items-start p-4 bg-slate-50 rounded-lg">
+                                    <div className="w-5 h-5 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5">✕</div>
+                                    <span className="text-sm text-slate-600">No user profiling or tracking.</span>
+                                </div>
+                                <div className="flex gap-3 items-start p-4 bg-slate-50 rounded-lg">
+                                    <div className="w-5 h-5 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5">✕</div>
+                                    <span className="text-sm text-slate-600">No continuous monitoring.</span>
+                                </div>
+                                <div className="flex gap-3 items-start p-4 bg-slate-50 rounded-lg">
+                                    <div className="w-5 h-5 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5">✕</div>
+                                    <span className="text-sm text-slate-600">No automated enforcement actions.</span>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </section>
 
