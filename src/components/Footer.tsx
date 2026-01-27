@@ -103,6 +103,7 @@ export default function Footer() {
                             <ul className="space-y-4 text-sm text-slate-400">
                                 <li><a href="#" className="hover:text-white transition-colors">About</a></li>
                                 <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
+                                <li><Link href="/architecture" className="hover:text-white transition-colors text-emerald-400 font-medium">Architecture & Trust</Link></li>
                                 <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
                                 <li><a href="mailto:hello@satyastack.com" className="hover:text-white transition-colors">Contact</a></li>
                             </ul>
