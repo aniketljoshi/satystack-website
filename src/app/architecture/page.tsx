@@ -235,7 +235,7 @@ export default function Architecture() {
                     <div className="space-y-6">
                         {[
                             { title: "Data Origin & Storage", desc: "Raw data (PII) originates from an Issuer and is transmitted securely to the User Device. It is stored in local storage, encrypted continuously." },
-                            { title: "The 'Air Gap' for PII", desc: "When a Verifier requests a check (e.g., Age > 18), the User Device inputs the raw data into a Zero-Knowledge Circuit locally. The raw data never leaves the device during this process." },
+                            { title: "The 'Air Gap' for PII", desc: <span>When a Verifier requests a check (e.g., Age &gt; 18), the User Device inputs the raw data into a <Link href="/learn/zero-knowledge" className="text-blue-600 hover:text-blue-700 underline decoration-blue-200 underline-offset-2">Zero-Knowledge Circuit</Link> locally. The raw data never leaves the device during this process.</span> },
                             { title: "Transmission of Proof", desc: "Only the generated ZK-Proof (a small cryptographic string) is transmitted to the SatyaStack Infrastructure or the Verifier." },
                             { title: "Logging", desc: "The Verifier logs the successful verification result for audit purposes. This log contains metadata (timestamp, proof ID) but zero PII." },
                         ].map((step, i) => (
@@ -639,6 +639,7 @@ export default function Architecture() {
                                     <li><Link href="/#how-it-works" className="hover:text-white transition-colors">How It Works</Link></li>
                                     <li><Link href="/#use-cases" className="hover:text-white transition-colors">Use Cases</Link></li>
                                     <li><Link href="/learn/zero-knowledge" className="hover:text-white transition-colors">Learning Center</Link></li>
+                                    <li><Link href="/learn/glossary" className="hover:text-white transition-colors">Glossary</Link></li>
                                 </ul>
                             </div>
                             <div>

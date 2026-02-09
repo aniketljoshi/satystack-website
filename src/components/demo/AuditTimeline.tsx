@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { CheckCircle, XCircle, ArrowRightLeft, FileText, Download } from 'lucide-react';
+import { CheckCircle, XCircle, ArrowRightLeft, Download } from 'lucide-react';
 import type { AuditLogEntry } from '@/lib/demo/types';
 
 interface AuditTimelineProps {

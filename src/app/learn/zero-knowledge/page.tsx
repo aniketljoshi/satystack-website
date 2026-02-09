@@ -182,7 +182,7 @@ export default function LearnZKP() {
                         </div>
                         <h2 className="text-3xl font-bold text-slate-900 mb-4">What SatyaStack Does</h2>
                         <p className="text-slate-500 text-lg">
-                            SatyaStack is the <strong>infrastructure</strong> that makes this privacy possible.
+                            SatyaStack is the <Link href="/architecture" className="text-blue-600 hover:text-blue-700 underline decoration-blue-200 underline-offset-2 font-bold">infrastructure</Link> that makes this privacy possible.
                         </p>
                     </div>
 

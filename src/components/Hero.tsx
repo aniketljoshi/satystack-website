@@ -51,7 +51,7 @@ export default function Hero({ onRequestAccess }: HeroProps) {
                     transition={{ duration: 0.5, delay: 0.2 }}
                     className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto mb-12 leading-relaxed text-center"
                 >
-                    India's first <strong className="text-white">Zero-Knowledge Compliance Infrastructure</strong>.
+                    India&apos;s first <Link href="/learn/zero-knowledge" className="text-white hover:text-blue-400 transition-colors underline decoration-blue-500/30 underline-offset-4">Zero-Knowledge Compliance Infrastructure</Link>.
                     Meet DPDP, FIU-IND, and RBI requirements with programmable privacy.
                 </motion.p>
 

@@ -81,30 +81,31 @@ export default function Footer() {
                         <div>
                             <h4 className="font-bold text-white mb-6">Platform</h4>
                             <ul className="space-y-4 text-sm text-slate-400">
-                                <li><a href="#why-now" className="hover:text-white transition-colors">Why Now</a></li>
+                                <li><Link href="/#why-now" className="hover:text-white transition-colors">Why Now</Link></li>
                                 <li><Link href="/learn/zero-knowledge" className="hover:text-white transition-colors text-blue-400 font-medium">Learning Center</Link></li>
-                                <li><a href="#how-it-works" className="hover:text-white transition-colors">How It Works</a></li>
-                                <li><a href="#use-cases" className="hover:text-white transition-colors">Use Cases</a></li>
-                                <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
-                                <li><a href="#faq" className="hover:text-white transition-colors">FAQ</a></li>
+                                <li><Link href="/#how-it-works" className="hover:text-white transition-colors">How It Works</Link></li>
+                                <li><Link href="/#use-cases" className="hover:text-white transition-colors">Use Cases</Link></li>
+                                <li><Link href="/#pricing" className="hover:text-white transition-colors">Pricing</Link></li>
+                                <li><Link href="/learn/glossary" className="hover:text-white transition-colors text-blue-400 font-medium">Glossary</Link></li>
+                                <li><Link href="/#faq" className="hover:text-white transition-colors">FAQ</Link></li>
                             </ul>
                         </div>
                         <div>
                             <h4 className="font-bold text-white mb-6">Developers</h4>
                             <ul className="space-y-4 text-sm text-slate-400">
-                                <li><a href="#developer-platform" className="hover:text-white transition-colors">Developer Platform</a></li>
-                                <li><a href="#comparison" className="hover:text-white transition-colors">SatyaStack vs Traditional</a></li>
+                                <li><Link href="/#developer-platform" className="hover:text-white transition-colors">Developer Platform</Link></li>
+                                <li><Link href="/#comparison" className="hover:text-white transition-colors">SatyaStack vs Traditional</Link></li>
                                 <li><a href="https://github.com/satyastack" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a></li>
-                                <li><a href="#roadmap" className="hover:text-white transition-colors">Roadmap</a></li>
+                                <li><Link href="/#roadmap" className="hover:text-white transition-colors">Roadmap</Link></li>
                             </ul>
                         </div>
                         <div>
                             <h4 className="font-bold text-white mb-6">Company</h4>
                             <ul className="space-y-4 text-sm text-slate-400">
-                                <li><a href="#" className="hover:text-white transition-colors">About</a></li>
-                                <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
+                                <li><Link href="/coming-soon" className="hover:text-white transition-colors">About</Link></li>
+                                <li><Link href="/coming-soon" className="hover:text-white transition-colors">Blog</Link></li>
                                 <li><Link href="/architecture" className="hover:text-white transition-colors text-emerald-400 font-medium">Architecture & Trust</Link></li>
-                                <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
+                                <li><Link href="/coming-soon" className="hover:text-white transition-colors">Careers</Link></li>
                                 <li><a href="mailto:hello@satyastack.com" className="hover:text-white transition-colors">Contact</a></li>
                             </ul>
                         </div>
@@ -114,8 +115,8 @@ export default function Footer() {
                 <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
                     <div>© 2026 SatyaStack Private Limited. All rights reserved.</div>
                     <div className="flex gap-8">
-                        <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-                        <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+                        <Link href="/coming-soon" className="hover:text-white transition-colors">Privacy Policy</Link>
+                        <Link href="/coming-soon" className="hover:text-white transition-colors">Terms of Service</Link>
                     </div>
                 </div>
             </div>

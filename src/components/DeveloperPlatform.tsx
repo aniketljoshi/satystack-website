@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { Copy, Terminal, CheckCircle2, Clock } from "lucide-react";
 
 export default function DeveloperPlatform() {
@@ -51,13 +52,9 @@ export default function DeveloperPlatform() {
                     </div>
 
                     <div className="mt-10 flex gap-4">
-                        <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-colors flex items-center gap-2">
-                            Read Docs
-                            <span className="px-2 py-0.5 text-xs font-bold bg-amber-500/20 text-amber-400 border border-amber-500/30 rounded-full flex items-center gap-1">
-                                <Clock className="w-3 h-3" />
-                                Soon
-                            </span>
-                        </button>
+                        <Link href="/architecture" className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-colors flex items-center gap-2">
+                            Read Architecture
+                        </Link>
                         <button className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 rounded-lg font-semibold transition-colors flex items-center gap-2">
                             View on GitHub
                             <span className="px-2 py-0.5 text-xs font-bold bg-amber-500/20 text-amber-400 border border-amber-500/30 rounded-full flex items-center gap-1">

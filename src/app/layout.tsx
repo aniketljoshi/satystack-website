@@ -79,19 +79,64 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "SatyaStack",
-              "url": "https://satyastack.com",
-              "logo": "https://satyastack.com/logo.png",
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "email": "contact@satyastack.com",
-                "contactType": "customer service"
-              },
-              "sameAs": [
-                "https://twitter.com/satyastack",
-                "https://linkedin.com/company/satyastack",
-                "https://github.com/satyastack"
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "name": "SatyaStack",
+                  "url": "https://satyastack.com",
+                  "logo": "https://satyastack.com/logo.png",
+                  "description": "India's first privacy-preserving KYC platform using zero-knowledge proofs",
+                  "contactPoint": {
+                    "@type": "ContactPoint",
+                    "email": "contact@satyastack.com",
+                    "contactType": "customer service"
+                  },
+                  "sameAs": [
+                    "https://twitter.com/satyastack",
+                    "https://linkedin.com/company/satyastack",
+                    "https://github.com/satyastack"
+                  ]
+                },
+                {
+                  "@type": "WebSite",
+                  "name": "SatyaStack",
+                  "url": "https://satyastack.com",
+                  "description": "Privacy-preserving compliance infrastructure for India",
+                  "publisher": {
+                    "@type": "Organization",
+                    "name": "SatyaStack"
+                  }
+                },
+                {
+                  "@type": "Service",
+                  "name": "Privacy-Preserving KYC Infrastructure",
+                  "provider": {
+                    "@type": "Organization",
+                    "name": "SatyaStack"
+                  },
+                  "description": "Zero-knowledge proof based compliance verification for banks, fintechs, NBFCs, crypto exchanges, and regulated entities. DPDP, FIU-IND, and RBI compliant.",
+                  "areaServed": {
+                    "@type": "Country",
+                    "name": "India"
+                  },
+                  "serviceType": "RegTech Compliance Infrastructure",
+                  "audience": {
+                    "@type": "Audience",
+                    "audienceType": "Banks, NBFCs, Fintechs, Crypto Exchanges, Payment Gateways"
+                  }
+                },
+                {
+                  "@type": "SoftwareApplication",
+                  "name": "SatyaStack SDK",
+                  "applicationCategory": "BusinessApplication",
+                  "operatingSystem": "Cross-platform",
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "INR"
+                  },
+                  "description": "Developer SDK for integrating privacy-preserving KYC and compliance proofs into fintech applications."
+                }
               ]
             })
           }}

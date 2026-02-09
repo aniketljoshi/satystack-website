@@ -34,9 +34,7 @@ export default function Security() {
                     <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">
                         Security by Principle
                     </h2>
-                    <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-                        We don't just secure data. We ensure you never have to touch it.
-                    </p>
+                    We don&apos;t just secure data. We ensure you never have to touch it.
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">

@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Shield } from "lucide-react";
+import { useRouter, usePathname } from "next/navigation";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface NavbarProps {
@@ -26,18 +27,26 @@ export default function Navbar({ onRequestAccess }: NavbarProps) {
         { name: "Pricing", to: "pricing" },
     ];
 
+    const router = useRouter();
+    const pathname = usePathname();
+
     const scrollToSection = (e: React.MouseEvent, id: string) => {
         e.preventDefault();
-        const element = document.getElementById(id);
-        if (element) {
-            const offset = 80;
-            const elementPosition = element.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - offset;
 
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth"
-            });
+        if (pathname === '/') {
+            const element = document.getElementById(id);
+            if (element) {
+                const offset = 80;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        } else {
+            router.push(`/#${id}`);
         }
         setIsMobileMenuOpen(false);
     };

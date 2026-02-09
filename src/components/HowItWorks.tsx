@@ -68,6 +68,16 @@ export default function HowItWorks() {
                             </motion.div>
                         ))}
                     </div>
+
+                    <div className="mt-16 text-center">
+                        <a
+                            href="/learn/zero-knowledge"
+                            className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 hover:gap-3 transition-all group"
+                        >
+                            Read our non-technical guide to Zero-Knowledge Proofs
+                            <User className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
