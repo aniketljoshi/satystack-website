@@ -647,7 +647,7 @@ export default function Architecture() {
                                 <ul className="space-y-3">
                                     <li><Link href="/architecture" className="text-white font-medium flex items-center gap-2"><CheckCircle2 className="w-3 h-3 text-emerald-500" /> Architecture & Trust</Link></li>
                                     <li><Link href="/#faq" className="hover:text-white transition-colors">FAQ</Link></li>
-                                    <li><Link href="mailto:compliance@satyastack.com" className="hover:text-white transition-colors">Contact Compliance</Link></li>
+                                    <li><Link href="mailto:contact@satyastack.com" className="hover:text-white transition-colors">Contact Compliance</Link></li>
                                 </ul>
                             </div>
                         </div>

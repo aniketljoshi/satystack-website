@@ -106,7 +106,7 @@ export default function Footer() {
                                 <li><Link href="/coming-soon" className="hover:text-white transition-colors">Blog</Link></li>
                                 <li><Link href="/architecture" className="hover:text-white transition-colors text-emerald-400 font-medium">Architecture & Trust</Link></li>
                                 <li><Link href="/coming-soon" className="hover:text-white transition-colors">Careers</Link></li>
-                                <li><a href="mailto:hello@satyastack.com" className="hover:text-white transition-colors">Contact</a></li>
+                                <li><a href="mailto:contact@satyastack.com" className="hover:text-white transition-colors">Contact</a></li>
                             </ul>
                         </div>
                     </div>

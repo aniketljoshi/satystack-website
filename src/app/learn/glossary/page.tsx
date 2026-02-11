@@ -138,9 +138,9 @@ export default function Glossary() {
                                     {item.term}
                                 </h2>
                                 <span className={`text-xs font-bold uppercase tracking-wider px-2 py-1 rounded border ${item.category === 'Regulation' ? 'bg-amber-50 text-amber-700 border-amber-100' :
-                                        item.category === 'Cryptography' ? 'bg-purple-50 text-purple-700 border-purple-100' :
-                                            item.category === 'Privacy' ? 'bg-emerald-50 text-emerald-700 border-emerald-100' :
-                                                'bg-slate-50 text-slate-600 border-slate-100'
+                                    item.category === 'Cryptography' ? 'bg-purple-50 text-purple-700 border-purple-100' :
+                                        item.category === 'Privacy' ? 'bg-emerald-50 text-emerald-700 border-emerald-100' :
+                                            'bg-slate-50 text-slate-600 border-slate-100'
                                     }`}>
                                     {item.category}
                                 </span>
@@ -226,7 +226,7 @@ export default function Glossary() {
                                 <ul className="space-y-3">
                                     <li><Link href="/architecture" className="hover:text-white transition-colors flex items-center gap-2">Architecture & Trust</Link></li>
                                     <li><Link href="/#faq" className="hover:text-white transition-colors">FAQ</Link></li>
-                                    <li><Link href="mailto:compliance@satyastack.com" className="hover:text-white transition-colors">Contact Compliance</Link></li>
+                                    <li><Link href="mailto:contact@satyastack.com" className="hover:text-white transition-colors">Contact Compliance</Link></li>
                                 </ul>
                             </div>
                         </div>
