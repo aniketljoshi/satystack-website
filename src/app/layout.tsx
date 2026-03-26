@@ -64,6 +64,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    google: "k6L6Fncywzh5F3lM-3BrQkMZPbH7TKDLKxEF7wEsMcQ",
+  },
 };
 
 export default function RootLayout({
@@ -105,6 +108,14 @@ export default function RootLayout({
                   "publisher": {
                     "@type": "Organization",
                     "name": "SatyaStack"
+                  },
+                  "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": {
+                      "@type": "EntryPoint",
+                      "urlTemplate": "https://satyastack.com/?q={search_term_string}"
+                    },
+                    "query-input": "required name=search_term_string"
                   }
                 },
                 {

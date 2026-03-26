@@ -49,5 +49,22 @@ export default function ArchitectureLayout({
 }: {
     children: React.ReactNode;
 }) {
-    return children;
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://satyastack.com" },
+                            { "@type": "ListItem", "position": 2, "name": "Architecture", "item": "https://satyastack.com/architecture" }
+                        ]
+                    })
+                }}
+            />
+            {children}
+        </>
+    );
 }

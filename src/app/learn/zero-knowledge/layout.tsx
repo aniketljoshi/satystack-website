@@ -56,6 +56,20 @@ export default function LearnLayout({
                 dangerouslySetInnerHTML={{
                     __html: JSON.stringify({
                         "@context": "https://schema.org",
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://satyastack.com" },
+                            { "@type": "ListItem", "position": 2, "name": "Learn", "item": "https://satyastack.com/learn" },
+                            { "@type": "ListItem", "position": 3, "name": "Zero-Knowledge Proofs", "item": "https://satyastack.com/learn/zero-knowledge" }
+                        ]
+                    })
+                }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
                         "@type": "TechArticle",
                         "headline": "What is Zero-Knowledge Proof? | Privacy Compliance Guide",
                         "description": "Learn how zero-knowledge proofs enable privacy-preserving KYC. Simple guide for compliance officers, regulators, and developers.",
